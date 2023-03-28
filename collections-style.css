@@ -1,0 +1,20 @@
+.about-content{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:20px;
+    grid-template-rows: fit-content 1fr;
+    grid-template-areas:
+        "poza my-info my-info"
+        "my-social my-social my-social";
+
+}
+.figures{
+    width: 90%;
+
+}
+
+.st{
+    text-align:left;
+}
+
+

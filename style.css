@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Playfair Display SC', sans-serif;
+    color: #555;
+}
+body {
+    background: url('https://www.weddingstylemagazine.com/wp-content/uploads/2022/05/SCP_5160-Simon-Cecere.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+p {
+    font-family: 'Playfair Display SC', sans-serif;
+    line-height: 1.5em;
+    font-size: 50px;
+    margin: 0 0 1em 0;
+    
+}
+
+
+
+.my-info-content{
+    font-size: large;
+
+}
+
+.my-info-title{
+    font-size: xx-large;
+    font-family: 'Playfair Display SC', sans-serif;
+
+    margin-bottom: 20px;
+    
+}
+
+.page-grid {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    
+
+}
+
+
+.page-grid > *{
+    padding: 20px 20px;
+
+}
+
+
+.container {
+    /* grid-area: container; */
+    background: white;
+    padding: 20px 20px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 6px #9c7f7c;
+    border-radius: 4px 4px 4px 4px;
+}
+.footer {
+    grid-area: footer;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background: white;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0px 4px #ccc;
+    border-radius: 4px;
+}
+
+.copyright {
+    margin: 0;
+}
+.menu {
+    /* width: 2500px; */
+    margin: 80px auto 0 auto;
+    text-align: center;
+    height: 100px;
+}
+
+
+
+
+.menu-item {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 60px 140px;
+    background: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline: none;
+    color: #888;
+    vertical-align: bottom;
+    transition: 0.5s;
+}
+
+
+.menu-item:hover{
+    color: #c0392b;
+
+}
+
+.menu-item-active {   
+    color: #c0392b;
+
+}
+
+#title {
+    margin: 0;
+    font-size: 120px;
+    font-weight: 700;
+    margin: 0 0 0 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 100px;
+    line-height: 1em;
+    margin: 4 0 1em 0;
+    text-align: left;
+}
+
+.header {
+    margin-top: 30px;
+}
+
+hr {
+    margin: 25px 0;
+    border: 1px solid #f1f1f1;
+}
+
+
+/* @media (max-width: 2000px) {
+    .menu {
+        width: 100%;
+    }
+
+    .footer {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 1800px) {
+    body {
+        background: none;
+    }
+    .header {
+        display: none;
+    }
+    .footer {
+        margin-top: 10px;
+    }
+} */
+.portfolio-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.portfolio-item{
+    width: calc(33% - 13px);
+    margin-bottom: 20px;
+}
+@media (max-width: 990px){
+    .portfolio-container{
+        display:grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 768px){
+    .portfolio-container{
+        display:grid;
+        grid-template-columns: 1fr  ;
+        
+    }
+}
