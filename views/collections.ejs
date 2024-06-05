@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a6ea35d319.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FASHION Collections</title>
+</head>
+<body>
+    <header class="header">
+        <h1 id="title">Paolo Sebastian</h1>
+        <h2 class="subtitle">The Designs</h2>
+    </header>
+    <div class="page-grid">
+        <nav class="menu menu--light">
+            <a class="menu-item" href="/"><i class="fa fa-user"></i> The Designer</a>
+            <a class="menu-item menu-item-active" href="collections"><i class="fa fa-file-text"></i> Collections</a>
+            <a class="menu-item" href="contact"><i class="fa fa-heart"></i> Contact</a>
+        </nav>
+        
+        <main class="container portfolio-container">
+            <% collections.forEach(item => { %>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img class="flip-card-image" src="images/<%= item.image %>" alt="Costume">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1><%= item.season %></h1>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </main>
+
+        <footer class="footer">
+            <p class="copyright">Designed with precision. </p>
+        </footer>
+    </div>
+   
+</body>
+</html>

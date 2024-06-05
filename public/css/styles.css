@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     font-family: 'Playfair Display SC', sans-serif;
     color: #555;
 }
+
 body {
     background: url('https://www.weddingstylemagazine.com/wp-content/uploads/2022/05/SCP_5160-Simon-Cecere.jpg');
     background-repeat: no-repeat;
@@ -17,6 +19,7 @@ p {
     font-size: 50px;
     margin: 0 0 1em 0;
 }
+
 .page-grid{
     margin: 0;
     display: grid;
@@ -54,11 +57,12 @@ p {
     box-shadow: 0px 4px #ccc;
     border-radius: 4px;
 }
+
 .additional-info{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
+    display: flex;
+    justify-content: space-around;
 }
+
 .copyright {
     margin: 0;
     font-size: 35px;
@@ -152,7 +156,7 @@ hr {
 .designer-info {
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     padding: 20px;
-    margin: 20px auto;
+    margin-top: 20px;
     border: 1px solid #f1f1f1;
     box-shadow: 0px 4px #ccc;
     border-radius: 4px;
@@ -186,11 +190,12 @@ hr {
 .contact-form {
     background: rgba(255, 255, 255, 0.8); 
     padding: 20px;
-    margin: 20px auto;
     border: 1px solid #f1f1f1;
     box-shadow: 0px 4px #ccc;
+    margin-top: 20px;
     border-radius: 4px;
-    max-width: 600px; 
+    max-width: 1200px;
+    min-width: 500px;
     text-align: left; 
 }
 
@@ -316,6 +321,10 @@ button[type="submit"]:hover {
     transform: rotateY(180deg);
 }
 
+.confirmation-go-back {
+    font-size: 24px;
+}
+
 @media (max-width: 990px) {
     .portfolio-container {
         display: grid;
@@ -390,10 +399,6 @@ button[type="submit"]:hover {
         text-align: center;
         border-bottom: 1px solid #f1f1f1;
     }
-    .designer-info {
-        padding: 15px;
-        margin: 10px auto;
-    }
 
     .designer-info-title {
         font-size: 20px;
@@ -402,6 +407,7 @@ button[type="submit"]:hover {
     .designer-info-content {
         font-size: 16px;
     }
+
     .contact-form {
         padding: 15px;
         margin: 10px auto;
