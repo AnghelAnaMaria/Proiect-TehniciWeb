@@ -251,12 +251,11 @@ button[type="submit"]:hover {
 
 .portfolio-container {
     display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-}
-.portfolio-item {
-    width: calc(33% - 13px);
-    margin-bottom: 20px;
 }
 
 #spring-2023::before{
@@ -267,6 +266,54 @@ button[type="submit"]:hover {
 #spring-2023::after {
     content: " >";
     color: "#555";
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-image {
+    object-fit: cover;
+    width: 200px;
+    height: 300px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb0;
+    color: black;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background-color: #aaa;
+    color: white;
+    transform: rotateY(180deg);
 }
 
 @media (max-width: 990px) {
