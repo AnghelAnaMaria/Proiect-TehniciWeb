@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT;
 const secretKey = process.env.SECRET_KEY;
 const users = JSON.parse(fs.readFileSync('users.json'));
+const expressLayouts = require('express-ejs-layouts');
 
 app.use(session({
     secret: secretKey,
@@ -24,8 +25,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(expressLayouts);
+app.set('layout', 'layout');
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.render('index', {
+        title: 'Main page',
+        subtitle: 'The Designer',
+        user: req.session.user
+    });
 });
 
 const checkLoggedIn = (req, res, next) => {
@@ -36,7 +44,11 @@ const checkLoggedIn = (req, res, next) => {
 };
 
 app.get('/login', checkLoggedIn, (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+    res.render('login', {
+        title: 'Login',
+        subtitle: 'The Designer',
+        user: req.session.user
+    });
 });
 
 app.post('/login', (req, res) => {
@@ -60,7 +72,14 @@ app.get('/collections', async (req, res) => {
     try {
         const data = await fs.promises.readFile(path.join(__dirname, 'collections.json'), 'utf8');
         const collections = JSON.parse(data);
-        res.render('collections', { collections });
+
+        res.render('collections', {
+            title: 'Collections',
+            subtitle: 'The designs',
+            collections: collections,
+            user: req.session.user
+        });
+
     } catch (error) {
         console.error('Error reading collections.json:', error);
         res.status(500).send('Internal Server Error');
@@ -68,17 +87,30 @@ app.get('/collections', async (req, res) => {
 });
 
 app.get('/contact/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+    res.render('contact', {
+        title: 'Informations',
+        subtitle: 'Informations',
+        user: req.session.user
+    });
 });
 
 app.post('/contact/', (req, res) => {
     const { name, email, message } = req.body;
     console.log(`Contact form submitted!\nName: ${name}, Email: ${email}, Message: ${message}`);
-    res.render('confirmation', { name });
+    res.render('confirmation', {
+        title: 'Informations',
+        name: name,
+        subtitle: 'Informations',
+        user: req.session.user
+    });
 });
 
 app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
+    res.status(404).render('404', {
+        title: 'Page not found',
+        subtitle: 'The Designer',
+        user: req.session.user
+    });
 });
 
 app.listen(PORT, () => {

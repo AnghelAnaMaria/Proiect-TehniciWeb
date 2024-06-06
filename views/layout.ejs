@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a6ea35d319.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <header>
+        <% if (user) { %>
+            <div class="user-info">
+                <p class="user-info-text">Welcome, <%= user %>!</p>
+                <a href="/logout" class="logout-button">
+                    <i class="fa fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
+        <% } else { %>
+            <a href="/login" class="logout-button">
+                <i class="fa fa-sign-out-alt"></i> Login
+            </a>
+        <% } %> 
+        <header class="header">
+            <h1 id="title">Paolo Sebastian</h1>
+            <h2 class="subtitle"><%= subtitle %></h2>
+        </header>
+    </header>
+    <main>
+        <nav class="menu menu--light">
+            <a class="menu-item" href="/"><i class="fa fa-user"></i> The Designer</a>
+            <a class="menu-item" href="collections"><i class="fa fa-file-text"></i> Collections</a>
+            <a class="menu-item" href="contact"><i class="fa fa-heart"></i> Contact</a>
+        </nav>
+
+        <%- body %>
+    </main>
+    <footer class="footer">
+        <p class="copyright">Designed with precision. </p>
+    </footer>
+</body>
+</html>

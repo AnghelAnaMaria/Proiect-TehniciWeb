@@ -325,6 +325,31 @@ button[type="submit"]:hover {
     font-size: 24px;
 }
 
+.user-info {
+    top: 10px;
+    right: 10px;
+    text-align: right;
+}
+
+.user-info-text {
+    font-size: 24px;
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #aaa;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logout-button i {
+    margin-right: 5px;
+}
+
 @media (max-width: 990px) {
     .portfolio-container {
         display: grid;
@@ -350,7 +375,17 @@ button[type="submit"]:hover {
     .menu{
         margin-bottom: auto;
     }
-    
+    .additional-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .designer-info{
+        flex-basis: 100%;
+    }
+    .contact-form{
+        flex-basis: 100%;
+    }
 }
 
 
