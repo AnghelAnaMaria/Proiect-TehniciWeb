@@ -18,7 +18,7 @@ app.use(session({
     saveUninitialized: true,
 }));
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -68,15 +68,17 @@ app.get('/logout', (req, res) => {
     res.redirect('/login');
 });
 
-app.get('/collections', async (req, res) => {
+app.get('/collections/:year', async (req, res) => {
+    const selected_year = req.params.year;
+
     try {
         const data = await fs.promises.readFile(path.join(__dirname, 'collections.json'), 'utf8');
         const collections = JSON.parse(data);
 
         res.render('collections', {
-            title: 'Collections',
-            subtitle: 'The designs',
-            collections: collections,
+            title: `Collections ${selected_year}`,
+            subtitle: `The designs ${selected_year}`,
+            collections: collections[selected_year],
             user: req.session.user
         });
 
@@ -94,7 +96,7 @@ app.get('/contact/', (req, res) => {
     });
 });
 
-app.post('/contact/', (req, res) => {
+app.post('/contact', (req, res) => {
     const { name, email, message } = req.body;
     console.log(`Contact form submitted!\nName: ${name}, Email: ${email}, Message: ${message}`);
     res.render('confirmation', {
