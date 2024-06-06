@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none; /* no underline */
+}
+
 html {
     font-family: 'Playfair Display SC', sans-serif;
     color: #555;
@@ -237,7 +241,7 @@ hr {
 }
 
 button[type="submit"] {
-    background: #c0392b;
+    background-color: green;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -248,10 +252,6 @@ button[type="submit"] {
     transition: background 0.3s;
     display: block;
     margin: 20px auto 0 auto;
-}
-
-button[type="submit"]:hover {
-    background: #e74c3c;
 }
 
 .portfolio-container {
@@ -350,10 +350,18 @@ button[type="submit"]:hover {
     margin-right: 5px;
 }
 
-/* Add styles for dropdown menu */
 .dropdown {
     position: relative;
     display: inline-block;
+}
+
+.dropbtn {
+    color: #888;
+    transition: 0.5s;
+}
+
+.dropbtn:hover {
+    color: #c0392b;
 }
 
 .dropdown-content {
@@ -380,8 +388,10 @@ button[type="submit"]:hover {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+button:disabled,
+button.disabled {
+    background-color: #cccccc;
+    color: #666666;
 }
 
 @media (max-width: 990px) {
