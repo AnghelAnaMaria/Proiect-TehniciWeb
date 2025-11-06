@@ -1,18 +1,28 @@
 {
     "2021": [
         { "image": "costume1.png", "season": "Spring 2021" },
-        { "image": "costume5.png", "season": "Winter 2021" },
-        { "image": "costume6.png", "season": "Winter 2021" }
+        { "image": "costume2.png", "season": "Spring 2021" },
+        { "image": "costume3.png", "season": "Spring 2021" },
+        { "image": "costume7.png", "season": "Spring 2021" },
+        { "image": "costume8.png", "season": "Spring 2021" },
+        { "image": "costume9.png", "season": "Spring 2021" }
     ],
     "2022": [
-        { "image": "costume2.png", "season": "Spring 2022" },
-        { "image": "costume5.png", "season": "Winter 2022" }
+        { "image": "costume4.png", "season": "Winter 2022" },
+        { "image": "costume5.png", "season": "Winter 2022" },
+        { "image": "costume6.png", "season": "Winter 2022" },
+        { "image": "costume17.png", "season": "Winter 2022" },
+        { "image": "costume18.png", "season": "Winter 2022" },
+        { "image": "costume11.png", "season": "Winter 2022" }
+        
     ],
     "2023": [
-        { "image": "costume2.png", "season": "Spring 2023" },
-        { "image": "costume3.png", "season": "Spring 2023" },
-        { "image": "costume4.png", "season": "Winter 2023" },
-        { "image": "costume5.png", "season": "Winter 2023" },
-        { "image": "costume6.png", "season": "Winter 2023" }
+        { "image": "costume10.png", "season": "Winter 2023" },
+        { "image": "costume12.png", "season": "Winter 2023" },
+        { "image": "costume13.png", "season": "Winter 2023" },
+        { "image": "costume14.png", "season": "Winter 2023" },
+        { "image": "costume15.png", "season": "Winter 2023" },
+        { "image": "costume16.png", "season": "Winter 2023" }
+        
     ]
 }
