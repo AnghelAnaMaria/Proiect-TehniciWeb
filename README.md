@@ -1,4 +1,5 @@
 # Getting Started with Node.js Server
+# Haute Couture App
 
 This project was built using **Express.js** and **Node.js**.
 
